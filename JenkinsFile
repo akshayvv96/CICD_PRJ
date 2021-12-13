@@ -1,0 +1,17 @@
+pipeline {
+  agent any
+  stages {
+    stage('Checkout Scm') {
+      steps {
+        git(credentialsId: 'b0d1a548-2a4f-4a8c-82a3-fd58c7d214fe', url: 'https://github.com/akshayvv96/CICD_PRJ.git')
+      }
+    }
+
+    stage('Batch script 0') {
+      steps {
+        bat 'mvn clean deploy -DmuleDeploy -DskipTests -Dapp.runtime=4.3.0 -Danypoint.username=akshayvv96123 -Danypoint.password=$MYzfold2$ -Denvironment=Sandbox -Dcloudhub.application.name=CICD-PRJ -Dbusiness=API -DworkerType=Micro -Dworkers=1 -DaltDeploymentRepository=myinternalrepo::default::file:///C:/snapshots'
+      }
+    }
+
+  }
+}
