@@ -43,9 +43,10 @@
       <password>${password}</password>
       <applicationName>${cloudhub.application.name}</applicationName>
       <environment>${environment}</environment>
-      <region>${region}</region>
+      <businessGroup>${business}</businessGroup>
       <workers>${workers}</workers>
       <workerType>${workerType}</workerType>
+      <objectStoreV2>true</objectStoreV2>
       <properties>
         <key>value</key>
       </properties>
